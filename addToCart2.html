@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add to Cart</title>
+	<style type="text/css">
+		body{
+			width:100%;
+			text-align:center;
+		}
+		.shopping{
+			margin-top: 50px;
+			width:400px;
+			height:400px;
+			float: left;
+			display: block;
+			padding: 10px;
+			border:1px solid green;
+			box-sizing: border-box;
+
+		}
+		
+		p{
+			display: block;
+			font-size: 20px;
+			color:darkblue;
+		}
+		span{
+			color:red;
+			font-style: bold;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div class="shopping">
+		<img width="300px" height="200px" src="shirt.jpg">
+		<p>Product Name: Shirt</p>
+		<p>Price: 300 Taka</p>
+		<button onclick="myFunction()">Add To Cart</button>
+	</div>
+
+	<div class="shopping">
+		<img width="300px" height="200px" src="watch.jpg">
+		<p>Product Name: Watch</p>
+		<p>Price: 200 Taka</p>
+		<button onclick="myFunction2()">Add To Cart</button>
+	</div>
+	
+
+	<div class="shopping" id="item">
+		<p>Items List</p>
+		<p >
+			<img width="50px" height="50px" src="shirt.jpg">
+			Quentity: <span id="shirtQuetity">0</span> Price: <span id="shirtPrice">0</span></p>
+		
+		<p>
+			<img width="50px" height="50px" src="watch.jpg">
+			Quentity: <span id="watchQuetity">0</span> Price: <span id="watchPrice">0</span></p><hr>
+		<p>Total Price:<span id="total">0</span></p>
+
+	</div>
+	
+	<button onclick="item()"><img  width="30px" height="30px" src="item.png"><br>Item </button>
+
+	<script type="text/javascript">
+		document.getElementById("item").style.display="none";
+		
+		function item(){
+			document.getElementById("item").style.display="block";
+			
+		}
+		var shirt=["0"],watch=["0"],totalPrice=["0"];
+		
+		function myFunction(){
+			shirt++;
+			document.getElementById("shirtQuetity").innerHTML=shirt;
+			document.getElementById("shirtPrice").innerHTML=shirt*300;
+			
+			totalPrice=(shirt*300)+(watch*200);
+			document.getElementById("total").innerHTML=totalPrice;
+		}
+
+		function myFunction2(){
+			watch++;
+			document.getElementById("watchQuetity").innerHTML=watch;
+			document.getElementById("watchPrice").innerHTML=watch*200;
+			
+			totalPrice=(shirt*300)+(watch*200);
+			document.getElementById("total").innerHTML=totalPrice;
+		}
+
+
+	</script>
+</body>
+</html>
